@@ -1,0 +1,5 @@
+pytest
+playwright==1.40.0
+pytest-xdist
+pytest-html
+pytest-check

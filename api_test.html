@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Product Store</h1>
+    <button id="load">Load Products</button>
+    <p id="message"></p>
+
+    <script>
+        document.getElementById("load").onclick = async () => {
+            const response = await fetch("/api/products");
+
+            if (!response.ok) {
+                document.getElementById("message").textContent =
+                    "Unable to load products";
+            } else {
+                document.getElementById("message").textContent =
+                    "Products loaded successfully";
+            }
+        };
+    </script>
+</body>
+</html>

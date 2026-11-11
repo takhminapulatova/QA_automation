@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Employee Onboarding</h2>
+
+  <label for="name">Employee Name</label>
+  <input id="name" type="text">
+
+  <label for="department">Department</label>
+  <select id="department">
+    <option value="">Select department</option>
+    <option value="qa">QA</option>
+    <option value="dev">Development</option>
+  </select>
+
+  <label for="document">Employee Document</label>
+  <input id="document" type="file">
+
+  <button type="button" onclick="document.getElementById('result').textContent='Onboarding Complete'">
+    Submit
+  </button>
+
+  <p id="result"></p>
+</body>
+</html>

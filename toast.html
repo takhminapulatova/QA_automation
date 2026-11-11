@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Notification Test</h2>
+
+    <button onclick="showToast()">Save</button>
+
+    <p id="toast" style="display:none;">
+        Saved successfully
+    </p>
+
+    <script>
+        function showToast() {
+            setTimeout(function() {
+                document.getElementById("toast").style.display = "block";
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

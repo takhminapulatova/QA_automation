@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# PyCharm
+.idea/
+
+# Authentication
+auth.json
+*.auth.json
+
+# Playwright artifacts
+trace.zip
+trace/
+videos/
+test-results/
+
+# Pytest
+.pytest_cache/
+report.html
