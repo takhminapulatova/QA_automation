@@ -1,10 +1,13 @@
 import pytest
 from playwright.sync_api import expect
+from pages.login_page import LoginPage
 
 @pytest.mark.smoke
 def test_login_page_loads(page):
-    page.goto("https://the-internet.herokuapp.com/login")
+    login_page = LoginPage(page)
 
-    expect(page.get_by_label("Username")).to_be_visible()
-    expect(page.get_by_label("Password")).to_be_visible()
-    expect(page.get_by_role("button", name="Login")).to_be_visible()
+    login_page.open()
+
+    expect(login_page.username).to_be_visible()
+    expect(login_page.password).to_be_visible()
+    expect(login_page.login_button).to_be_visible()
