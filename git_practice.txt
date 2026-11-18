@@ -1,3 +1,3 @@
-Day 21 - Git Practice - MASTER BRANCH VERSION
+Day 21 - Git Practice - MERGE CONFLICT RESOLVED
 Learning Git branching for QA Automation.
 This change was made on the feature/automation-tests branch.
