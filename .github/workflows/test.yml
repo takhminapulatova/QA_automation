@@ -1,0 +1,31 @@
+name: QA Automation Tests
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox, webkit]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install Playwright browser
+        run: python -m playwright install --with-deps ${{ matrix.browser }}
+
+      - name: Run automated tests
+        run: pytest tests/test_parametrized_login.py tests/test_mobile.py -v --browser=${{ matrix.browser }}
