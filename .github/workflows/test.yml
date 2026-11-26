@@ -28,4 +28,11 @@ jobs:
         run: python -m playwright install --with-deps ${{ matrix.browser }}
 
       - name: Run automated tests
-        run: pytest tests/test_parametrized_login.py tests/test_mobile.py -v --browser=${{ matrix.browser }}
+        run: pytest tests/test_parametrized_login.py tests/test_mobile.py -v --browser=${{ matrix.browser }} --html=report-${{ matrix.browser }}.html --self-contained-html
+
+      - name: Upload test report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: report-${{ matrix.browser }}
+          path: report-${{ matrix.browser }}.html
